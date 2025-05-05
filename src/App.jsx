@@ -1,34 +1,40 @@
+import React, { Component } from 'react';
+import MyComp, { WelcomeMessage, Counter } from './MyComp';
 
-import { useState } from 'react';
-import MyComp from './MyComp';
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: "Hey, I'm Vineela!",
+    };
+  }
 
-function App() {
-  const [message, setMessage] = useState("Hey, I'm Vineela!");
-
-  const changeMessage = () => {
-    setMessage("Welcome to React!");
+  changeMessage = () => {
+    this.setState({ message: 'Welcome to React!' });
   };
 
-  return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>{message}</h1>
-      <button
-        onClick={changeMessage}
-        style={{
-          padding: '10px 20px',
-          fontSize: '16px',
-          backgroundColor: '#4CAF50',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
-      >
-        Click Here!
-      </button>
-      <MyComp name="Vineela" />
-    </div>
-  );
+  render() {
+    return (
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <h1>{this.state.message}</h1>
+        <button
+          onClick={this.changeMessage}
+          style={{
+            padding: '10px 20px',
+            fontSize: '16px',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+          }}
+        >
+          Click Here!
+        </button>
+        <MyComp name="Vineela" />
+      </div>
+    );
+  }
 }
 
 export default App;
