@@ -1,26 +1,34 @@
-import React from 'react';
-import { Footer, Header, Basics, Basics1, Greeting, Welcome , Element, Status, FruitList, Button, StyledText, MultiElement, NoJsx } from "./Basics";
 
-const App = () => {
+import { useState } from 'react';
+import MyComp from './MyComp';
+
+function App() {
+  const [message, setMessage] = useState("Hey, I'm Vineela!");
+
+  const changeMessage = () => {
+    setMessage("Welcome to React!");
+  };
+
   return (
-    <div>
-      <Header />
-      <Basics />
-      <Basics1 />
-      <Greeting />
-      <Welcome>
-        <h1>Hello, I'm Vineela.</h1>
-        <p>Welcome to my React Basics.</p>
-      </Welcome>
-      <Status />
-      <FruitList />
-      <Button />
-      <StyledText />
-      <MultiElement />
-      <NoJsx />
-      <Footer />
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>{message}</h1>
+      <button
+        onClick={changeMessage}
+        style={{
+          padding: '10px 20px',
+          fontSize: '16px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+        }}
+      >
+        Click Here!
+      </button>
+      <MyComp name="Vineela" />
     </div>
   );
-};
+}
 
 export default App;
