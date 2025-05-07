@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MyComp, { WelcomeMessage, Counter } from './MyComp';
+import { MyComp, Greet, WelcomeMessage, Counter, FruitsList, UserList,  FruitManager } from './MyComp';
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +31,15 @@ class App extends Component {
         >
           Click Here!
         </button>
+
+        <hr />
         <MyComp name="Vineela" />
+        <Greet username="Vinni" />
+        <WelcomeMessage />
+        <Counter />
+        <FruitsList />
+        < UserList />
+        <  FruitManager/>
       </div>
     );
   }
