@@ -1,48 +1,31 @@
-import React, { Component } from 'react';
-import { MyComp, Greet, WelcomeMessage, Counter, FruitsList, UserList,  FruitManager } from './MyComp';
+import React from 'react';
+import { Counter, Form, AuthProvider, LoginButton, ThemeProvider,ThemedComponent, HookCounterOne,  LayoutEffectDemo, UserProfile, TimerComponent, WindowResizeListener, FontSizeComponent, FactorialComponent, CallbackDemo, Fetch, CounterWithReducer, Parent, useWindowWidth } from './Hooks';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: "Hey, I'm Vineela!",
-    };
-  }
-
-  changeMessage = () => {
-    this.setState({ message: 'Welcome to React!' });
-  };
-
-  render() {
-    return (
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <h1>{this.state.message}</h1>
-        <button
-          onClick={this.changeMessage}
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-        >
-          Click Here!
-        </button>
-
-        <hr />
-        <MyComp name="Vineela" />
-        <Greet username="Vinni" />
-        <WelcomeMessage />
-        <Counter />
-        <FruitsList />
-        < UserList />
-        <  FruitManager/>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <Counter />
+      <Form />
+      <AuthProvider>
+        <LoginButton />
+      </AuthProvider>
+      <ThemeProvider>
+            <ThemedComponent />
+        </ThemeProvider>
+        < UserProfile />
+        < TimerComponent />
+        < WindowResizeListener />
+        < HookCounterOne />
+        <  LayoutEffectDemo />
+        < FontSizeComponent />
+        < FactorialComponent />
+        < CallbackDemo />
+        < Fetch />
+        < CounterWithReducer />
+        < Parent />
+        < useWindowWidth />
+    </div>
+  );
+};
 
 export default App;
