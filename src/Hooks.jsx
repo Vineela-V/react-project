@@ -372,3 +372,38 @@ export function useWindowWidth() {
 
   return width;
 }
+
+// Controlled component //
+
+export function ControlledForm () {
+  const [name, setName] = useState('');
+  const handleChange = (e) => setName(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Submitted: ${name}`);
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type='text' value={name} onChange={handleChange} />
+      <button type='submit'>Submit</button>
+    </form>
+  );
+}
+
+// Uncontrolled Components //
+
+export function UncontrolledForm() {
+  const nameRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Submitted: ${nameRef.current.value}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" ref={nameRef} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter, Form, AuthProvider, LoginButton, ThemeProvider,ThemedComponent, HookCounterOne,  LayoutEffectDemo, UserProfile, TimerComponent, WindowResizeListener, FontSizeComponent, FactorialComponent, CallbackDemo, Fetch, CounterWithReducer, Parent, useWindowWidth } from './Hooks';
+import { Counter, Form, AuthProvider, LoginButton, ThemeProvider,ThemedComponent, HookCounterOne,  LayoutEffectDemo, UserProfile, TimerComponent, WindowResizeListener, FontSizeComponent, FactorialComponent, CallbackDemo, Fetch, CounterWithReducer, Parent, useWindowWidth, ControlledForm, UncontrolledForm} from 'react' ;
 
 const App = () => {
   return (
@@ -24,6 +24,8 @@ const App = () => {
         < CounterWithReducer />
         < Parent />
         < useWindowWidth />
+        < ControlledForm />
+        < UncontrolledForm />
     </div>
   );
 };
