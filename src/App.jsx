@@ -1,16 +1,17 @@
 import React from 'react';
-import { Parent, ParentComponent, ChildComponent, Parent1, NameForm, Parent2, UserForm} from './Component& Lifting State ';
+import { App1, App2, PreventForm,keyboardEvents, App3,DoubleClickExample, ScrollExample,BlurExample } from './DOM events';
 
 const App = () => {
   return (
     <div>
-      < Parent />
-      < ParentComponent />
-      < ChildComponent />
-      < Parent1 />
-      < NameForm />
-      < Parent2 />
-      < UserForm />
+      < App1 />
+      < App2 />
+      < PreventForm />
+      < keyboardEvents />
+      < App3 />
+      < DoubleClickExample />
+      < ScrollExample />
+      < BlurExample />
     </div>
   )
 }
